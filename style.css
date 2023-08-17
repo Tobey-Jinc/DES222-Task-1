@@ -172,6 +172,14 @@ media queries for progressively bigger screen widths
         "c10 c10 c10 c10 c10 c10 c10 c10" minmax(var(--tablet-card-size), auto)
         ;
     }
+
+    .banner-subtitle {
+        font-size: 2em;
+    }
+    
+    .banner-title {
+        font-size: 3em;
+    }
 }
 
 @media (min-width: 75em) {
@@ -191,5 +199,13 @@ media queries for progressively bigger screen widths
         " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
         "c10 c10 c10 c10 c10 c10 c10 c10 c10 c10 c10 c10" minmax(var(--desktop-card-size), auto)
         ;
+    }
+
+    .banner-subtitle {
+        font-size: 2.25em;
+    }
+    
+    .banner-title {
+        font-size: 4em;
     }
 }
