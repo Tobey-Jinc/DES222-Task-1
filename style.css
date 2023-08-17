@@ -48,7 +48,8 @@ body {
 }
 
 .card-image {
-    max-height: 20em;
+    /* max-height: 20em; */
+    height: 50vh;
     object-fit: cover;
 }
 
@@ -133,23 +134,23 @@ media queries for progressively bigger screen widths
     ".   .   .   .  " minmax(var(--spacing), auto)
     "c1  c1  c1  c1 " minmax(var(--mobile-card-size), auto)
     ".   .   .   .  " minmax(var(--spacing), auto)
-    "c2 c2 c2 c2" minmax(30em, auto)
+    "c2 c2 c2 c2" minmax(var(--mobile-card-size), auto)
     ".   .   .   .  " minmax(var(--spacing), auto)
-    "c3 c3 c3 c3" minmax(30em, auto)
+    "c3 c3 c3 c3" minmax(var(--mobile-card-size), auto)
     ".   .   .   .  " minmax(var(--spacing), auto)
-    "c4 c4 c4 c4" minmax(30em, auto)
+    "c4 c4 c4 c4" minmax(var(--mobile-card-size), auto)
     ".   .   .   .  " minmax(var(--spacing), auto)
-    "c5 c5 c5 c5" minmax(30em, auto)
+    "c5 c5 c5 c5" minmax(var(--mobile-card-size), auto)
     ".   .   .   .  " minmax(var(--spacing), auto)
-    "c6 c6 c6 c6" minmax(30em, auto)
+    "c6 c6 c6 c6" minmax(var(--mobile-card-size), auto)
     ".   .   .   .  " minmax(var(--spacing), auto)
-    "c7 c7 c7 c7" minmax(30em, auto)
+    "c7 c7 c7 c7" minmax(var(--mobile-card-size), auto)
     ".   .   .   .  " minmax(var(--spacing), auto)
-    "c8 c8 c8 c8" minmax(30em, auto)
+    "c8 c8 c8 c8" minmax(var(--mobile-card-size), auto)
     ".   .   .   .  " minmax(var(--spacing), auto)
-    "c9 c9 c9 c9" minmax(30em, auto)
+    "c9 c9 c9 c9" minmax(var(--mobile-card-size), auto)
     ".   .   .   .  " minmax(var(--spacing), auto)
-    "c10 c10 c10 c10" minmax(30em, auto)
+    "c10 c10 c10 c10" minmax(var(--mobile-card-size), auto)
     ;
 }
 
