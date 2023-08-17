@@ -47,9 +47,9 @@ body {
     overflow: hidden;
 }
 
-/* this is the equivalent of setting the image rectangle to "Fill Container" in Figma */ 
 .card-image {
-    width: 100%;
+    height: 20em;
+    object-fit: cover;
 }
 
 .card-blurb {
@@ -158,17 +158,17 @@ media queries for progressively bigger screen widths
         grid-template:
         "ban ban ban ban ban ban ban ban" minmax(8em, auto)
         ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
-        "c1 c1 c1 c1 c2 c2 c2 c2" minmax(30em, auto)
+        "c1 c1 c1 c1 c2 c2 c2 c2" minmax(var(--tablet-card-size), auto)
         ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
-        "c3 c3 c3 c3 c4 c4 c4 c4" minmax(30em, auto)
+        "c3 c3 c3 c3 c4 c4 c4 c4" minmax(var(--tablet-card-size), auto)
         ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
-        "c5 c5 c5 c5 c5 c5 c5 c5" minmax(30em, auto)
+        "c5 c5 c5 c5 c5 c5 c5 c5" minmax(var(--tablet-card-size), auto)
         ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
-        "c6 c6 c6 c6 c7 c7 c7 c7" minmax(30em, auto)
+        "c6 c6 c6 c6 c7 c7 c7 c7" minmax(var(--tablet-card-size), auto)
         ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
-        "c8 c8 c8 c8 c9 c9 c9 c9" minmax(30em, auto)
+        "c8 c8 c8 c8 c9 c9 c9 c9" minmax(var(--tablet-card-size), auto)
         ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
-        "c10 c10 c10 c10 c10 c10 c10 c10" minmax(30em, auto)
+        "c10 c10 c10 c10 c10 c10 c10 c10" minmax(var(--tablet-card-size), auto)
         ;
     }
 }
@@ -178,17 +178,17 @@ media queries for progressively bigger screen widths
         grid-template:
         "ban ban ban ban ban ban ban ban ban ban ban ban" minmax(8em, auto)
         " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
-        "c1  c1  c1  c1  c1  c1  c1  c1  c2  c2  c2  c2 " minmax(32em, auto)
+        "c1  c1  c1  c1  c1  c1  c1  c1  c2  c2  c2  c2 " minmax(var(--desktop-card-size), auto)
         " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
-        "c3  c3  c3  c3  c3  c4  c4  c4  c4  c4  c4  c4 " minmax(32em, auto)
+        "c3  c3  c3  c3  c3  c4  c4  c4  c4  c4  c4  c4 " minmax(var(--desktop-card-size), auto)
         " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
-        "c5  c5  c5  c5  c5  c5  c5  c5  c5  c5  c5  c5 " minmax(32em, auto)
+        "c5  c5  c5  c5  c5  c5  c5  c5  c5  c5  c5  c5 " minmax(var(--desktop-card-size), auto)
         " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
-        "c6  c6  c6  c6  c6  c6  c6  c6  c7  c7  c7  c7 " minmax(32em, auto)
+        "c6  c6  c6  c6  c6  c6  c6  c6  c7  c7  c7  c7 " minmax(var(--desktop-card-size), auto)
         " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
-        "c8  c8  c8  c8  c9  c9  c9  c9  c9  c9  c9  c9 " minmax(32em, auto)
+        "c8  c8  c8  c8  c9  c9  c9  c9  c9  c9  c9  c9 " minmax(var(--desktop-card-size), auto)
         " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
-        "c10 c10 c10 c10 c10 c10 c10 c10 c10 c10 c10 c10" minmax(32em, auto)
+        "c10 c10 c10 c10 c10 c10 c10 c10 c10 c10 c10 c10" minmax(var(--desktop-card-size), auto)
         ;
     }
 }
