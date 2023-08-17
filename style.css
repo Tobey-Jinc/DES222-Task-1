@@ -1,18 +1,18 @@
-/* 
-Color pallete. This section defines variables for the color pallete,
-so that we can refer to particular colors by name instead of hexadecimal values.
-This is applied to the 'root' psuedo-element, which just means that these color
-variables are available to be used anywhere in our html document
-*/
 :root {
-    --white-font: #FFFFFF;
-    --black-font: #000000;
-    --color1: #D1C6AD;
-    --color2: #BBADA0;
-    --color3: #A1869E;
-    --color4: #797596;
-    --color5: #0B1D51;
-    /* add in other color variables for color pallete */
+    --white: #FFFFFF;
+    --accent: #FF0035;
+    --foreground: #202332;
+    --background: #0E131F;
+
+    /* Layout */
+    --spacing: 1em;
+    --mobile-card-size: 10em;
+    --tablet-card-size: 15em;
+    --desktop-card-size: 21em;
+}
+
+body {
+    background-color: var(--background);
 }
 
 /* Defines the main container size, we are limiting to 72em max and centring in the viewport */
@@ -21,8 +21,7 @@ variables are available to be used anywhere in our html document
     margin: 0 auto;
     column-gap: 1em;
     font-family: Inter;
-    color: var(--white-font);
-    /* TODO: set the main font color */
+    color: var(--white);
 }
 
 /* Here we define the aspects of style of our elements other than their grid layout */
@@ -31,30 +30,29 @@ variables are available to be used anywhere in our html document
     background-color: var(--color4);
 }
 
-.banner-title {
-    font-size: 3em;
-}
-
 .banner-subtitle {
-    font-size: 2.25em;
-    padding-left: 0.25em;
-    padding-top: 0.125em;
+    color: var(--accent);
+    font-size: 1.125em;
 }
 
-.team-member-card {
-    background-color: var(--color3);
+.banner-title {
+    font-size: 1.5em;
+}
+
+.card {
+    background-color: var(--foreground);
     display: flex;
     flex-direction: column;
-    border-radius: 1em;
+    border-radius: 0em 1em 1em 1em;
     overflow: hidden;
 }
 
 /* this is the equivalent of setting the image rectangle to "Fill Container" in Figma */ 
-.team-member-card-image {
+.card-image {
     width: 100%;
 }
 
-.team-member-card-blurb {
+.card-blurb {
     padding: 0.5em;
 }
 
@@ -77,52 +75,44 @@ variables are available to be used anywhere in our html document
     grid-area: ban;
 }
 
-#teamMemberCard1 {
-    grid-area: tm1;
+#card1 {
+    grid-area: c1;
 }
 
-#teamMemberCard2 {
-    grid-area: tm2;
+#card2 {
+    grid-area: c2;
 }
 
-#teamMemberCard3 {
-    grid-area: tm3;
+#card3 {
+    grid-area: c3;
 }
 
-#ourClientsTitle {
-    grid-area: oct;
+#card4 {
+    grid-area: c4;
 }
 
-#clientIcon1 {
-    grid-area: ci1;
+#card5 {
+    grid-area: c5;
 }
 
-#clientIcon2 {
-    grid-area: ci2;
+#card6 {
+    grid-area: c6;
 }
 
-#clientIcon3 {
-    grid-area: ci3;
+#card7 {
+    grid-area: c7;
 }
 
-#clientIcon4 {
-    grid-area: ci4;
+#card8 {
+    grid-area: c8;
 }
 
-#clientIcon5 {
-    grid-area: ci5;
+#card9 {
+    grid-area: c9;
 }
 
-#clientIcon6 {
-    grid-area: ci6;
-}
-
-#clientIcon7 {
-    grid-area: ci7;
-}
-
-#clientIcon8 {
-    grid-area: ci8;
+#card10 {
+    grid-area: c10;
 }
 
 /* Use a flexible layout grid */
@@ -139,19 +129,27 @@ media queries for progressively bigger screen widths
 */
 .main-container {
     grid-template: 
-    "ban ban ban ban" minmax(6em, auto)
-    ".   .   .   .  " minmax(2em, auto)
-    "tm1 tm1 tm1 tm1" minmax(30em, auto)
-    ".   .   .   .  " minmax(2em, auto)
-    "tm2 tm2 tm2 tm2" minmax(30em, auto)
-    ".   .   .   .  " minmax(2em, auto)
-    "tm3 tm3 tm3 tm3" minmax(30em, auto)
-    ".   .   .   .  " minmax(4em, auto)
-    "oct oct oct oct" minmax(6em, auto)
-    "ci1 ci1 ci2 ci2" minmax(8em, auto)
-    "ci3 ci3 ci4 ci4" minmax(8em, auto)
-    "ci5 ci5 ci6 ci6" minmax(8em, auto)
-    "ci7 ci7 ci8 ci8" minmax(8em, auto)
+    "ban ban ban ban" minmax(3em, auto)
+    ".   .   .   .  " minmax(var(--spacing), auto)
+    "c1  c1  c1  c1 " minmax(var(--mobile-card-size), auto)
+    ".   .   .   .  " minmax(var(--spacing), auto)
+    "c2 c2 c2 c2" minmax(30em, auto)
+    ".   .   .   .  " minmax(var(--spacing), auto)
+    "c3 c3 c3 c3" minmax(30em, auto)
+    ".   .   .   .  " minmax(var(--spacing), auto)
+    "c4 c4 c4 c4" minmax(30em, auto)
+    ".   .   .   .  " minmax(var(--spacing), auto)
+    "c5 c5 c5 c5" minmax(30em, auto)
+    ".   .   .   .  " minmax(var(--spacing), auto)
+    "c6 c6 c6 c6" minmax(30em, auto)
+    ".   .   .   .  " minmax(var(--spacing), auto)
+    "c7 c7 c7 c7" minmax(30em, auto)
+    ".   .   .   .  " minmax(var(--spacing), auto)
+    "c8 c8 c8 c8" minmax(30em, auto)
+    ".   .   .   .  " minmax(var(--spacing), auto)
+    "c9 c9 c9 c9" minmax(30em, auto)
+    ".   .   .   .  " minmax(var(--spacing), auto)
+    "c10 c10 c10 c10" minmax(30em, auto)
     ;
 }
 
@@ -159,16 +157,18 @@ media queries for progressively bigger screen widths
     .main-container {
         grid-template:
         "ban ban ban ban ban ban ban ban" minmax(8em, auto)
-        ".   .   .   .   .   .   .   .  " minmax(2em, auto)
-        "tm1 tm1 tm1 tm1 tm2 tm2 tm2 tm2" minmax(30em, auto)
-        ".   .   .   .   .   .   .   .  " minmax(2em, auto)
-        ".   .   tm3 tm3 tm3 tm3 .   .  " minmax(30em, auto)
-        ".   .   .   .   .   .   .   .  " minmax(4em, auto)
-        "oct oct oct oct oct oct oct oct" minmax(6em, auto)
-        "ci1 ci1 ci1 ci1 ci2 ci2 ci2 ci2" minmax(16em, auto)
-        "ci3 ci3 ci3 ci3 ci4 ci4 ci4 ci4" minmax(16em, auto)
-        "ci5 ci5 ci5 ci5 ci6 ci6 ci6 ci6" minmax(16em, auto)
-        "ci7 ci7 ci7 ci7 ci8 ci8 ci8 ci8" minmax(16em, auto)
+        ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
+        "c1 c1 c1 c1 c2 c2 c2 c2" minmax(30em, auto)
+        ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
+        "c3 c3 c3 c3 c4 c4 c4 c4" minmax(30em, auto)
+        ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
+        "c5 c5 c5 c5 c5 c5 c5 c5" minmax(30em, auto)
+        ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
+        "c6 c6 c6 c6 c7 c7 c7 c7" minmax(30em, auto)
+        ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
+        "c8 c8 c8 c8 c9 c9 c9 c9" minmax(30em, auto)
+        ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
+        "c10 c10 c10 c10 c10 c10 c10 c10" minmax(30em, auto)
         ;
     }
 }
@@ -177,14 +177,18 @@ media queries for progressively bigger screen widths
     .main-container {
         grid-template:
         "ban ban ban ban ban ban ban ban ban ban ban ban" minmax(8em, auto)
-        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(2em, auto)
-        "tm1 tm1 tm1 tm1 tm2 tm2 tm2 tm2 tm3 tm3 tm3 tm3" minmax(32em, auto)
-        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(4em, auto)
-        "oct oct oct oct oct oct oct oct oct oct oct oct" minmax(2em, auto)
-        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(2em, auto)
-        "ci1 ci1 ci1 ci2 ci2 ci2 ci3 ci3 ci3 ci4 ci4 ci4" minmax(8em, auto)
-        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(1em, auto)
-        "ci5 ci5 ci5 ci6 ci6 ci6 ci7 ci7 ci7 ci8 ci8 ci8" minmax(8em, auto)
+        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
+        "c1  c1  c1  c1  c1  c1  c1  c1  c2  c2  c2  c2 " minmax(32em, auto)
+        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
+        "c3  c3  c3  c3  c3  c4  c4  c4  c4  c4  c4  c4 " minmax(32em, auto)
+        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
+        "c5  c5  c5  c5  c5  c5  c5  c5  c5  c5  c5  c5 " minmax(32em, auto)
+        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
+        "c6  c6  c6  c6  c6  c6  c6  c6  c7  c7  c7  c7 " minmax(32em, auto)
+        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
+        "c8  c8  c8  c8  c9  c9  c9  c9  c9  c9  c9  c9 " minmax(32em, auto)
+        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
+        "c10 c10 c10 c10 c10 c10 c10 c10 c10 c10 c10 c10" minmax(32em, auto)
         ;
     }
 }
