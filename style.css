@@ -57,18 +57,31 @@ body {
     padding: 0.5em;
 }
 
-.our-clients-title {
-    background-color: var(--color1);
-    text-align: center;
-    color: var(--color3);
-    font-size: 3em;
-    border-radius: 1em;
+.references-container {
+    border-style: solid;
+    border-color: var(--foreground);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0em 1em 1em 1em;
+}
+
+.references-title {
+    background-color: var(--foreground);
+    font-size: 2.25em;
+    color: var(--accent);
+    font-weight: bold;
     padding: 0.5em;
 }
 
-/* this is the equivalent of setting the image rectangle to "Fill Container" in Figma */ 
-.client-icon {
-    width: 100%;
+.reference-links-container {
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.reference-link {
+    color: var(--white);
+    font-size: 0.75em;
 }
 
 /* now we create names for the grid areas for specific elements */
@@ -116,6 +129,10 @@ body {
     grid-area: c10;
 }
 
+#references {
+    grid-area: ref;
+}
+
 /* Use a flexible layout grid */
 .main-container {
     display: grid;
@@ -151,6 +168,8 @@ media queries for progressively bigger screen widths
     "c9 c9 c9 c9" minmax(var(--mobile-card-size), auto)
     ".   .   .   .  " minmax(var(--spacing), auto)
     "c10 c10 c10 c10" minmax(var(--mobile-card-size), auto)
+    ".   .   .   .  " minmax(var(--spacing), auto)
+    "ref ref ref ref" minmax(var(--mobile-card-size), auto)
     ;
 }
 
@@ -170,6 +189,8 @@ media queries for progressively bigger screen widths
         "c8 c8 c8 c8 c9 c9 c9 c9" minmax(var(--tablet-card-size), auto)
         ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
         "c10 c10 c10 c10 c10 c10 c10 c10" minmax(var(--tablet-card-size), auto)
+        ".   .   .   .   .   .   .   .  " minmax(var(--spacing), auto)
+        "ref ref ref ref ref ref ref ref" minmax(var(--tablet-card-size), auto)
         ;
     }
 
@@ -179,6 +200,10 @@ media queries for progressively bigger screen widths
     
     .banner-title {
         font-size: 3em;
+    }
+
+    .reference-link {
+        font-size: 1.5em;
     }
 }
 
@@ -198,6 +223,8 @@ media queries for progressively bigger screen widths
         "c8  c8  c8  c8  c9  c9  c9  c9  c9  c9  c9  c9 " minmax(var(--desktop-card-size), auto)
         " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
         "c10 c10 c10 c10 c10 c10 c10 c10 c10 c10 c10 c10" minmax(var(--desktop-card-size), auto)
+        " .   .   .   .   .   .   .   .   .   .   .   . " minmax(var(--spacing), auto)
+        "ref ref ref ref ref ref ref ref ref ref ref ref" minmax(var(--desktop-card-size), auto)
         ;
     }
 
@@ -207,5 +234,9 @@ media queries for progressively bigger screen widths
     
     .banner-title {
         font-size: 4em;
+    }
+
+    .reference-link {
+        font-size: 1.5em;
     }
 }
